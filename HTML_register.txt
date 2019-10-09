@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+
+<html>
+
+ <head>
+ 
+  <meta name="keywords" content="tests,maths,physics,science,multiple choice tests">
+  <meta name="author" content="John Mavridis">
+    
+   <meta charset="UTF-8">
+  
+  <link rel="stylesheet" type="text/css" href="style_register.css">
+  <link rel="icon" href="images/book.ico">
+  <title>ΕΓΓΡΑΦΗ</title>
+  
+ </head>
+
+ <body>
+  
+    <div id="keimenaki">
+	  <p>Συμπλήρωσε την παρακάτω φόρμα με το username και τον κωδικό<br>
+	  που θέλεις να χρησιμοποιείς.Τα στοιχεία αυτά είναι απαραίτητα για<br>
+	  την εγγραφή σου στο σάιτ. </p>
+	</div>
+  
+    <form  id="register_form" method="post" action="do_register.php" >
+     Username: <input type="text" name="name">   <br>
+     Password:  <input type="password" name="pswrd"> <br> <br>
+     <input class="button" type="submit" name="getin" value="Εγγραφή" >
+    </form>
+     
+	<?php 
+	   if (isset($_GET['preuser']))
+       {
+	   echo '<span id="errormsg">O χρήστης με αυτό το όνομα υπάρχει ήδη. Διάλεξε κάποιο άλλο username</span>' ;
+	   }  
+	   
+	   if (isset($_GET['null']))
+       {
+	   echo '<span id="errormsg">Έδωσες κενά στοιχεία</span>' ;
+	   }  
+	   
+	  if (isset($_GET['ok']))
+       {
+	   echo '<span id="ok">O λογαριασμός σου δημιουργήθηκε με επιτυχία.<br>Γύρνα στην αρχική σελίδα για να κάνεις τα τεστ.</span>' ;
+	   }  
+	?>
+	
+     <p id="msg"> Μέσα από την επιστήμη μπορούμε να φτιάξουμε έναν πιο όμορφο κόσμο για τους ανθρώπους<br>
+	  (άμα την χρησιμοποιήσουμε σωστά...) </p>
+	  
+	 <p>
+	  <a class="button" href="index.php"> Eπιστροφή στην αρχική σελίδα </a> 
+	 </p>
+	 
+ </body>
+
+</html>

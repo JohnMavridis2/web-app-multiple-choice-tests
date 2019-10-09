@@ -1,0 +1,29 @@
+<?php
+   include 'database.php';  // στο αρχειο database.php γραφουμε τις 3 προτασεις για να συνδεθουμε στη βαση
+   $res=mysql_query(
+     'SELECT
+      	 user_id,username
+	 FROM
+	     users                  
+	 WHERE
+	     username="' . $_POST['name'] . '"  
+		 AND
+         password="' . $_POST['pswrd'] . '"		   
+	 '    
+   );
+
+   if (mysql_num_rows($res)==1)           // αμα υπαρχει τετοιος χρηστης η my sql γυρνα ενα πινακα με 1 εγγραφη...
+    {
+     $record=mysql_fetch_array($res);
+     session_start();	 
+	 $_SESSION['id']=$record['user_id'];        // κρατω στο session τα id και username του χρηστη
+	 $_SESSION['username']=$record['username'];
+	 
+	 header('Location:b\welcome.php');          // λεω στο browser να ζητησει το welcome.php  O XΡΗΣΤΗς ΥΠΑΡΧΕΙ ΚΑΙ ΜΠΑΙΝΕΙ ΣΤΗ ΚΥΡΙΑ ΣΕΛΙΔΑ
+	}
+  else
+    {
+	header('Location:index.php?error=yes');         //δεν υπαρχει τετοιος χρηστης αρα στελνω τον χρηστη στην πρωτη σελιδα και του εμφανιζω μηνυμα λαθους
+	}
+
+?>

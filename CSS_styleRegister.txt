@@ -1,0 +1,58 @@
+#register_form{
+
+position:absolute;
+top:120px;
+
+padding:20px;
+border: 2px solid #0066FF;
+
+}
+
+.button {
+  font-size:  14px; 
+  background-color:#70DB70 ;
+  color: white ;
+  padding: 5px;
+  border: 2px solid #0066CC  ;
+  text-decoration: none;
+}
+
+.button:hover{
+  font-size:  14px; 
+  background-color:white ;
+  color: #70DB70;
+  padding: 5px;
+  border: 2px solid #333300  ;
+  cursor:pointer;
+  text-decoration: none;
+}
+
+#keimenaki{
+position:absolute;
+top:30px;
+
+}
+
+
+#msg{
+  font-weight:bold;
+  border: 2px solid #0066FF ;
+  font-size:  16px;
+  padding: 5px;
+  position:absolute;
+  top:280px;
+}
+
+#errormsg{
+  color:red;
+  position:absolute;
+  top:140px;
+  left:300px;
+}
+
+#ok{
+  color:green;
+  position:absolute;
+  top:140px;
+  left:300px;
+}
